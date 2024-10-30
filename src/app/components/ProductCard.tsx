@@ -31,11 +31,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
   imageUrl,
 }) => {
   const { cart, addToCart, updateCart } = useCart();
-  console.log({ originalPrice, price });
+
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleupdateToCart = () => {
-    console.log("Called");
     updateCart(id, 1);
   };
 

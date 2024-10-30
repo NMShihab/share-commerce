@@ -10,7 +10,7 @@ const CartDetails = () => {
   const { cart, updateCart, deleteFromCart } = useCart();
   return (
     <div className="">
-      <div className="max-h-96 overflow-auto space-y-4 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 [&::-webkit-scrollbar-thumb]:rounded-full">
+      <div className="max-h-80 overflow-auto space-y-4 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 [&::-webkit-scrollbar-thumb]:rounded-full">
         {cart.items.map((item) => (
           <div
             key={item.id}
@@ -23,11 +23,7 @@ const CartDetails = () => {
               width={64}
               className="w-16 h-16 object-cover rounded-md mr-4"
             />
-            {/* <img
-              src={item.image}
-              alt={item.name}
-              className="w-16 h-16 object-cover rounded-md mr-4" // Styles for the image
-            /> */}
+
             <div className="flex-1">
               <h3 className="text-lg font-semibold">{item.name}</h3>
               <p className="text-sm text-gray-500">

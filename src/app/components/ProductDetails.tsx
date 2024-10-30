@@ -31,13 +31,13 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
     }
   };
   return (
-    <div className="max-w-5xl max-h-[500px] overflow-auto mx-auto p-6 bg-white rounded-lg shadow-lg">
+    <div className="max-w-5xl max-h-96 overflow-auto mx-auto p-6 bg-white rounded-lg shadow-lg [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 [&::-webkit-scrollbar-thumb]:rounded-full">
       {/* Product Image */}
-      <div className="relative h-64 w-full mb-6">
+      <div className="relative h-48 w-full mb-6">
         <Image
           src={product.thumbnail}
           layout="fill"
-          objectFit="cover"
+          objectFit="contain"
           objectPosition="center"
           alt={product.title}
         />

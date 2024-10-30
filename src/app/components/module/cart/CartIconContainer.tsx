@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import CartIcon from "./icons/CartIcon";
-import useCart from "../hooks/cart/useCart";
+import CartIcon from "../../icons/CartIcon";
+import useCart from "../../../hooks/cart/useCart";
 
 const CartIconContainer = () => {
   const { cart } = useCart();

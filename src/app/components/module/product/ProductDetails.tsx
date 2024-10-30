@@ -1,8 +1,8 @@
 import React from "react";
-import { Product } from "../types/productTypes";
+import { Product } from "../../../types/productTypes";
 import Image from "next/image";
-import useCart from "../hooks/cart/useCart";
-import { Item } from "../types/cartTypes";
+import useCart from "../../../hooks/cart/useCart";
+import { Item } from "../../../types/cartTypes";
 
 interface ProductDetailsProps {
   product: Product;

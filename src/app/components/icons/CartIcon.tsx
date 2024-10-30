@@ -5,7 +5,7 @@ import Modal from "../Shared/Modal";
 import { useState } from "react";
 import NoData from "../Shared/Nodata";
 import useCart from "@/app/hooks/cart/useCart";
-import CartDetails from "../CartDetails";
+import CartDetails from "../module/cart/CartDetails";
 
 const CartIcon = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

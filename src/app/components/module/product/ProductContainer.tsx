@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import ProductCard from "./ProductCard";
-import { ProductResponse } from "../types/productTypes";
+import { ProductResponse } from "@/app/types/productTypes";
 
 const ProductContainer = ({ resData }: { resData: ProductResponse }) => {
   return (
@@ -13,7 +13,6 @@ const ProductContainer = ({ resData }: { resData: ProductResponse }) => {
           title={product.title}
           brand={product.brand}
           price={product.price}
-          originalPrice={product.price}
           discount={product.discountPercentage}
           imageUrl={product.thumbnail}
         />

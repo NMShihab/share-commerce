@@ -1,10 +1,11 @@
 "use client";
 
 import React from "react";
-import AddIcon from "./icons/AddIcon";
-import RemoveIcon from "./icons/RemoveIcon";
-import useCart from "../hooks/cart/useCart";
+
 import Image from "next/image";
+import useCart from "@/app/hooks/cart/useCart";
+import AddIcon from "../../icons/AddIcon";
+import RemoveIcon from "../../icons/RemoveIcon";
 
 const CartDetails = () => {
   const { cart, updateCart, deleteFromCart } = useCart();

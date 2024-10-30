@@ -1,15 +1,15 @@
 "use client";
 
 import React, { useState } from "react";
-import CartaddIcon from "./icons/CartaddIcon";
-import EyeIcon from "./icons/EyeIcon";
-import OfferIcon from "./icons/OfferIcon";
-import GlassButton from "./Shared/Buttons/GlassButton";
+import CartaddIcon from "../../icons/CartaddIcon";
+import EyeIcon from "../../icons/EyeIcon";
+import OfferIcon from "../../icons/OfferIcon";
+import GlassButton from "../../Shared/Buttons/GlassButton";
 import Image from "next/image";
-import { Cart, CartItem, Item } from "../types/cartTypes";
-import useCart from "../hooks/cart/useCart";
-import DeleteAddButton from "./Shared/Buttons/DeleteAddButton";
-import Modal from "./Shared/Modal";
+import { Cart, CartItem, Item } from "../../../types/cartTypes";
+import useCart from "../../../hooks/cart/useCart";
+import DeleteAddButton from "../../Shared/Buttons/DeleteAddButton";
+import Modal from "../../Shared/Modal";
 import DetailsContainer from "./DetailsContainer";
 
 interface ProductCardProps {
@@ -17,7 +17,7 @@ interface ProductCardProps {
   title: string;
   brand: string;
   price: number;
-  originalPrice: number;
+
   discount?: number;
   imageUrl: string;
 }
@@ -26,7 +26,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
   title,
   brand,
   price,
-  originalPrice,
   discount,
   imageUrl,
 }) => {

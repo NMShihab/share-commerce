@@ -1,4 +1,4 @@
-import ProductContainer from "./components/ProductContainer";
+import ProductContainer from "./components/module/product/ProductContainer";
 import { Suspense } from "react";
 import { fetchProducts } from "./services/fetchProduct";
 import ErrorMessage from "./components/Shared/ErrorMessage";

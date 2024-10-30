@@ -1,5 +1,5 @@
 import React from "react";
-import CartIconContainer from "./CartIconContainer";
+import CartIconContainer from "../module/cart/CartIconContainer";
 import Image from "next/image";
 
 const Navbar = () => {

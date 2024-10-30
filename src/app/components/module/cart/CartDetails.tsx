@@ -42,7 +42,7 @@ const CartDetails = () => {
                 }}
                 className="px-2 py-1 text-xxl font-bold text-white bg-yellow-500 hover:bg-yellow-600 rounded-md"
               >
-                <div className="w-3 bg-white border-.5 h-[2] mx-[4px] my-2.5"></div>
+                <div className="w-3 bg-white border-.5 h-[2px] mx-[4px] my-2.5"></div>
               </button>
               <span className="mx-2 text-lg font-semibold">
                 {item.quantity}

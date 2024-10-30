@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import CartaddIcon from "./icons/CartaddIcon";
 import EyeIcon from "./icons/EyeIcon";
 import OfferIcon from "./icons/OfferIcon";
@@ -9,6 +9,8 @@ import Image from "next/image";
 import { Cart, CartItem, Item } from "../types/cartTypes";
 import useCart from "../hooks/cart/useCart";
 import DeleteAddButton from "./Shared/Buttons/DeleteAddButton";
+import Modal from "./Shared/Modal";
+import DetailsContainer from "./DetailsContainer";
 
 interface ProductCardProps {
   id: number;
@@ -30,6 +32,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   const { cart, addToCart, updateCart } = useCart();
   console.log({ originalPrice, price });
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleupdateToCart = () => {
     console.log("Called");
@@ -84,7 +87,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
   const calculateDiscountPrice = (price: number, discount: number) => {
     const discountAmount = (price * discount) / 100;
 
-    // Calculate the updated price
     const updatedPrice = price - discountAmount;
 
     return {
@@ -142,7 +144,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
         {/* Image container with hover effects */}
         <div className="relative overflow-hidden rounded-md">
-          <div className="relative w-full h-64">
+          <div className="relative w-full h-64 bg-gray-100">
             <Image
               src={imageUrl}
               alt="Description"
@@ -159,7 +161,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
           {/* Glass effect buttons on hover */}
           <div className="absolute inset-0 flex flex-col gap-2 items-center justify-end pb-4  opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             {renderButton()}
-            <GlassButton Icon={EyeIcon} text="Quick View" />
+            <GlassButton
+              Icon={EyeIcon}
+              text="Quick View"
+              onClick={() => setIsModalOpen(true)}
+            />
           </div>
         </div>
       </div>
@@ -168,14 +174,20 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <div className="mt-4 pl-2 pb-2">
         <p className="text-gray-400 text-sm">{brand}</p>
         <p className="text-lg font-semibold truncate">{title}</p>
-        {/* <div className="flex items-center mt-2 space-x-2">
-          <p className="text-blue-400 text-xl font-semibold">৳ {price}</p>
-          {originalPrice > price && (
-            <p className="text-gray-500 line-through">৳ {originalPrice}</p>
-          )}
-        </div> */}
         {PriceContent()}
       </div>
+
+      {isModalOpen && (
+        <Modal
+          isOpen={isModalOpen}
+          onClose={() => {
+            setIsModalOpen(false);
+          }}
+          title="Product Details"
+        >
+          <DetailsContainer id={id} />
+        </Modal>
+      )}
     </div>
   );
 };

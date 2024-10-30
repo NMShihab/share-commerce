@@ -14,7 +14,7 @@ const GlassButton = ({
   return (
     <button
       onClick={onClick}
-      className="bg-white flex flex-row items-center justify-center gap-2 w-[80%] bg-opacity-20 backdrop-blur-sm text-white py-2 px-4 rounded-lg hover:bg-opacity-30 transition-colors"
+      className="bg-white flex flex-row items-center justify-center gap-2 w-[85%] bg-opacity-20 backdrop-blur-sm text-white py-2 px-4 rounded-lg hover:bg-opacity-30 transition-colors"
     >
       <Icon /> {text}
     </button>

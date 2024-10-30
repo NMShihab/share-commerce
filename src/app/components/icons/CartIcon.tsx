@@ -4,9 +4,12 @@ import Image from "next/image";
 import Modal from "../Shared/Modal";
 import { useState } from "react";
 import NoData from "../Shared/Nodata";
+import useCart from "@/app/hooks/cart/useCart";
+import CartDetails from "../CartDetails";
 
 const CartIcon = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { cart } = useCart();
 
   return (
     <>
@@ -27,7 +30,7 @@ const CartIcon = () => {
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
         >
-          <NoData />
+          {cart.quantity === 0 ? <NoData /> : <CartDetails />}
         </Modal>
       )}
     </>

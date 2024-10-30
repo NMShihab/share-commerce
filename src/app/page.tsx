@@ -1,4 +1,4 @@
-import ClientComponent from "./components/ProductContainer";
+import ProductContainer from "./components/ProductContainer";
 import { Suspense } from "react";
 import { fetchProducts } from "./services/fetchProduct";
 import ErrorMessage from "./components/Shared/ErrorMessage";
@@ -8,7 +8,11 @@ export default async function Home() {
   return (
     <div className="">
       <Suspense fallback={<div>Loading...</div>}>
-        {isSuccess && <ClientComponent resData={data} />}
+        {isSuccess && (
+          <div className="flex items-center justify-center">
+            <ProductContainer resData={data} />
+          </div>
+        )}
         {!isSuccess && (
           <div className="w-screen h-screen flex items-center justify-center">
             <ErrorMessage

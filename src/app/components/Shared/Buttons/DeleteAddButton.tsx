@@ -14,7 +14,7 @@ const DeleteAddButton = ({
   handleDecreaseFromCart: () => void;
 }) => {
   return (
-    <div className="bg-green-500 rounded-lg py-2 px-1  flex flex-row items-center justify-between w-[80%] text-white">
+    <div className="bg-green-500 rounded-lg py-2 px-1  flex flex-row items-center justify-between w-[85%] text-white">
       <div className="cursor-pointer" onClick={handleDecreaseFromCart}>
         <RemoveIcon />
       </div>

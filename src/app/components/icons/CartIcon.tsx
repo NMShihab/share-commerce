@@ -7,6 +7,7 @@ import NoData from "../Shared/Nodata";
 
 const CartIcon = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <>
       <Image
